@@ -252,7 +252,7 @@ void postorderVisit(CapiDiAbbigliamento* radice)
 
 void inorderVisit(CapiDiAbbigliamento* radice)
 {
-	postorderVisit(radice->left);
+	inorderVisit(radice->left);
 	printf("Nome: %s\n", radice->nome);
 	printf("Marca: %s\n", radice->marca);
 	printf("Prezzo: %lf\n", radice->prezzo);
@@ -265,7 +265,7 @@ void inorderVisit(CapiDiAbbigliamento* radice)
 		printf("%s, ", radice->taglia[i]);
 	}
 	printf("\n");
-	postorderVisit(radice->right);
+	inorderVisit(radice->right);
 }
 
 CapiDiAbbigliamento* ricercaMinimoABR(CapiDiAbbigliamento* radice)
@@ -384,7 +384,7 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 	{
 		scanf("%s", &scelta);
 		toLower(scelta);
-		if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+		if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 			printf("Errore di inserimento, ricorda di digitare si o no\n");
 		if (strcmp(scelta, "no") == 0)
 		{
@@ -396,11 +396,11 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 				printf("Arrivederci!\n");
 				return;
 			}
-			else if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+			else if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 				acquista(radice, head, L);
 		}
-	} while ( (strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0) );
-	if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+	} while ( (strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0) );
+	if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 	{
 		if (prodotto->quantita == 0)
 		{
@@ -410,10 +410,10 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 			{
 				scanf("%s", &scelta);
 				toLower(scelta);
-				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 					printf("Errore di inserimento, ricorda di digitare si o no\n");
-			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0));
-			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0));
+			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 			{
 				insertListaDiAttesa(L, head->nickname, prodotto->nome, sceltataglia);
 				printf("Inserito/a in lista di attesa!\n");
@@ -423,10 +423,10 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 			{
 				scanf("%s", &scelta);
 				toLower(scelta);
-				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 					printf("Errore di inserimento, ricorda di digitare si o no\n");
-			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0));
-			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0));
+			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 				acquista(radice, head, L);
 			else
 			{
@@ -445,10 +445,10 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 			{
 				scanf("%s", &scelta);
 				toLower(scelta);
-				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 					printf("Errore di inserimento, ricorda di digitare si o no\n");
-			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0));
-			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0));
+			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 				acquista(radice, head, L);
 			else
 			{
@@ -464,10 +464,10 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 			{
 				scanf("%s", &scelta);
 				toLower(scelta);
-				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+				if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 					printf("Errore di inserimento, ricorda di digitare si o no\n");
-			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0));
-			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+			} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0));
+			if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 			{
 				do
 				{
@@ -481,10 +481,10 @@ void acquista(CapiDiAbbigliamento* radice, Utente *head, ListaDiAttesa* L)
 				{
 					scanf("%s", &scelta);
 					toLower(scelta);
-					if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0))
+					if ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0))
 						printf("Errore di inserimento, ricorda di digitare si o no\n");
-				} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sì") != 0) && (strcmp(scelta, "no") != 0));
-				if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sì") == 0))
+				} while ((strcmp(scelta, "si") != 0) && (strcmp(scelta, "sÃ¬") != 0) && (strcmp(scelta, "no") != 0));
+				if ((strcmp(scelta, "si") == 0) || (strcmp(scelta, "sÃ¬") == 0))
 					acquista(radice, head, L);
 				else
 				{
@@ -761,10 +761,10 @@ void menu(Utente* head, CapiDiAbbigliamento *radice, ListaDiAttesa *L, Admin *A)
 			printf("\nRegistrazione effettuata. Vuoi effettuare il login?\n(Digita si/no)\n");
 			scanf(" %s", s);
 			toLower(s);
-			if( (strcmp(s, "si") != 0) && (strcmp(s, "sì") != 0) && (strcmp(s, "no") != 0))
+			if( (strcmp(s, "si") != 0) && (strcmp(s, "sÃ¬") != 0) && (strcmp(s, "no") != 0))
 				printf("Errore! Digita si/no");
-		} while ( (strcmp(s, "si") != 0) && (strcmp(s, "sì") != 0) && (strcmp(s, "no") != 0) );
-		if ((strcmp(s, "si") == 0) || (strcmp(s, "sì") == 0))
+		} while ( (strcmp(s, "si") != 0) && (strcmp(s, "sÃ¬") != 0) && (strcmp(s, "no") != 0) );
+		if ((strcmp(s, "si") == 0) || (strcmp(s, "sÃ¬") == 0))
 		{
 			login(head, radice, L, A);
 		}
